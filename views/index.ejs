@@ -1,36 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
 </head>
 <style>
     table,tr,td{
       border-style:solid;
       border-color: black;
+    };
+    a,button{
+        text-decoration: none;
     }
 </style>
 <body>
-
+<div class="container">
 <h1>Supermarket system</h1> 
 <table class="table">
 
     <tr class="table">
-        <th>Products Id</th><th>Products Name</th><th>Products Category</th>
+        <th>Products Id</th>
+        <th>Products Name</th>
+        <th>Products Category</th>
+        <th>Products State</th>
+        <th></th>
+        <th></th>
     </tr>
     <% data.forEach(function(element) { %>
     <tr>
         <td><%= element.id %></td>
         <td><%= element.name %></td>
         <td><%= element.category %></td>
+        <td><%= element.availability %></td>
+        <td>
+            <form>
+                <button><a href= "/availability/<%= element.id %>">available</a></button>
+            </form>
+        </td>
+        <td>
+            <form>
+                <button><a href= "/out/<%= element.id %>">out of stock</a></button>
+            </form>
+        </td>
+        <td>
+            <button><a href= "/delete/<%= element.id %>">Delete</a></button>
+            </form>
+        </td>
 
     </tr>
         <%}) %>
+
                 
 </table>
 
+<table>
+    <tr>
+        <form action="/add" method ="GET">
+        <tr>Name</tr>
+        <input type="string" name="name"/>
+        <tr>Category</tr>
+        <input type="string" name="category"/>
+        <button type="submit">submit</button> 
+           
+        </form>
+    </tr>
+</table>
 
 
-
+</div>
 </body>
 
 </html>

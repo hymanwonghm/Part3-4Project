@@ -2,13 +2,16 @@ exports.seed = (knex)=>{
     return knex('products',Promise)
 .insert([{
     name: "tissue",
-    category:"daily use"
+    category:"daily use",
+    availability: "available"
 },{
     name: "water",
-    category:"drink"
+    category:"drink",
+    availability: "available"
 },{
     name: "coke",
-    category:"drink"
+    category:"drink",
+    availability: "available"
 }
 ])
 }
