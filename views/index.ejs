@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style>
+    table,tr,td{
+      border-style:solid;
+      border-color: black;
+    }
+</style>
+<body>
+
+<h1>Supermarket system</h1> 
+<table class="table">
+
+    <tr class="table">
+        <th>Products Id</th><th>Products Name</th><th>Products Category</th>
+    </tr>
+    <% data.forEach(function(element) { %>
+    <tr>
+        <td><%= element.id %></td>
+        <td><%= element.name %></td>
+        <td><%= element.category %></td>
+
+    </tr>
+        <%}) %>
+                
+</table>
+
+
+
+
+</body>
+
+</html>
