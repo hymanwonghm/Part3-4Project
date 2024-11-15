@@ -1,6 +1,7 @@
 // Importing modules
 const express = require('express')
 const path = require('path')
+const cors = require('cors') //read client web applications that are loaded in one domain
 
 // Importing router
 const { router } = require('./routers')
